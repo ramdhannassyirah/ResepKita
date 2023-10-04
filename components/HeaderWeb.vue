@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <nav class="navbar navbar-expand-lg border-bottom border-dark">
+    <nav
+      class="navbar navbar-expand-lg fixed-top border-bottom border-dark bg-white"
+    >
       <div class="container">
         <a class="navbar-brand" href="/">ResepKita</a>
         <button
