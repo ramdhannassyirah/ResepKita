@@ -3,7 +3,7 @@
     <div class="">
       <img
         class="card-img-top"
-        src="https://source.unsplash.com/random"
+        src="https://source.unsplash.com/800x400/?food"
         alt=""
       />
       <div class="card-body">
@@ -12,7 +12,7 @@
         <p class="card-text">{{ bahan }}</p>
       </div>
     </div>
-    <nuxt-link to="/tambah/_id/edit">Edit</nuxt-link>
+    <nuxt-link :to="`/tambah/_id/${resepId}`">Edit</nuxt-link>
   </div>
 </template>
 

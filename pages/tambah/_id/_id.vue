@@ -45,13 +45,48 @@ export default {
       },
     }
   },
+  async created() {
+    // Ambil ID resep dari parameter URL
+    const resepId = this.$route.params.id
+
+    // Panggil metode untuk mengambil detail resep berdasarkan ID
+    await this.getDetailResep(resepId)
+  },
   methods: {
+    async getDetailResep(resepId) {
+      try {
+        const response = await this.$axios.get(
+          `/rest/v1/resep?id=eq.${resepId}`,
+          {
+            headers: {
+              apikey: process.env.supabaseKey,
+            },
+          }
+        )
+        if (response.status === 200) {
+          const data = response.data[0]
+
+          if (data) {
+            // Mengisi data yang ada ke dalam formulir
+            this.updatedResep.nama = data.nama
+            this.updatedResep.deskripsi = data.deskripsi
+            this.updatedResep.bahan = data.bahan
+          } else {
+            console.error('Resep tidak ditemukan.')
+          }
+        } else {
+          console.error('Gagal mengambil data resep.')
+        }
+      } catch (error) {
+        console.error('Error:', error.message)
+      }
+    },
     async updateResep() {
       try {
         // Ambil ID resep dari parameter URL
         const resepId = this.$route.params.id
 
-        const response = await this.$axios.put(
+        const response = await this.$axios.patch(
           `/rest/v1/resep?id=eq.${resepId}`,
           this.updatedResep, // Kirim data resep yang sudah diupdate sebagai payload
           {
