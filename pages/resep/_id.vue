@@ -1,18 +1,26 @@
 <template>
   <div class="container">
-    <div class="">
-      <img
-        class="card-img-top"
-        src="https://source.unsplash.com/800x400/?food"
-        alt=""
-      />
-      <div class="card-body">
-        <h5 class="card-title">{{ nama }}</h5>
-        <p class="card-text">{{ deskripsi }}</p>
-        <p class="card-text">{{ bahan }}</p>
+    <div class="row">
+      <div class="col">
+        <img
+          class="card-img-top"
+          src="https://source.unsplash.com/800x400/?food"
+          alt=""
+        />
       </div>
+      <div class="col-md d-flex flex-column justify-content-center ml-md-3">
+        <h5 class="fw-bold fs-1">{{ nama }}</h5>
+        <div class="d-flex my-3">
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram px-3"></i></a>
+          <a href=""><i class="bi bi-whatsapp"></i></a>
+        </div>
+        <p class="card-text">{{ deskripsi }}</p>
+        <nuxt-link :to="`/tambah/edit/${resepId}`">Edit</nuxt-link>
+        <hr />
+      </div>
+      <p class="card-text">{{ bahan }}</p>
     </div>
-    <nuxt-link :to="`/tambah/_id/${resepId}`">Edit</nuxt-link>
   </div>
 </template>
 
@@ -26,6 +34,7 @@ export default {
       resepId: '',
     }
   },
+
   async created() {
     const params = this.$route.params
     await this.getDetailData(params?.id)

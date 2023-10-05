@@ -25,7 +25,7 @@
       </div>
     </section>
     <section>
-      <div class="container">
+      <div class="container my-5">
         <div class="row mt-4 justify-content-between">
           <div class="col-md-3">
             <h1 class="fw-bold">20</h1>
@@ -60,7 +60,7 @@
       </div>
     </section>
     <section id="blog">
-      <div class="container">
+      <div class="container my-5">
         <div class="row">
           <div class="col">
             <img src="" alt="" />
@@ -100,7 +100,7 @@
       </div>
     </section>
     <section id="About">
-      <div class="container mt-3">
+      <div class="container my-5">
         <div class="row">
           <div class="text-center">
             <img
