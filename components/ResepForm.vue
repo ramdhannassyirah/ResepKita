@@ -26,7 +26,7 @@
               v-model="newResep.deskripsi"
               class="form-control"
               required
-            ></input>
+            />
           </div>
         </div>
         <div class="">
