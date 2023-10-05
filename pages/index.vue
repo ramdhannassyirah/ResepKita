@@ -28,7 +28,7 @@
       <div class="container my-5">
         <div class="row mt-4 justify-content-between">
           <div class="col-md-3">
-            <h1 class="fw-bold">20</h1>
+            <h1 class="fw-bold">{{ resepId }}</h1>
             <p>SEMUA RESEP</p>
             <hr />
             <p>
@@ -134,6 +134,32 @@
 <script>
 export default {
   name: 'IndexPage',
-  components: {},
+  data() {
+    return {
+      resepId: null, // Ganti dengan tipe data null atau default ID awal
+    }
+  },
+  mounted() {
+    this.getResep()
+  },
+  methods: {
+    async getResep() {
+      try {
+        const response = await this.$axios.get('/rest/v1/resep?select=id', {
+          headers: {
+            apikey: process.env.supabaseKey,
+          },
+        })
+
+        // Mengambil satu ID dari respons
+        const firstId = response?.data[0]?.id
+
+        // Mengganti properti resepId dengan ID yang baru
+        this.resepId = firstId || null // Jika tidak ada ID yang tersedia, set null atau nilai default
+      } catch (error) {
+        console.error('Terjadi kesalahan:', error)
+      }
+    },
+  },
 }
 </script>

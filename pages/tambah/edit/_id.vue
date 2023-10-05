@@ -86,9 +86,16 @@ export default {
         // Ambil ID resep dari parameter URL
         const resepId = this.$route.params.id
 
+        // Buat objek yang berisi data resep yang akan diupdate
+        const updatedData = {
+          nama: this.updatedResep.nama,
+          deskripsi: this.updatedResep.deskripsi,
+          bahan: this.updatedResep.bahan,
+        }
+
         const response = await this.$axios.patch(
           `/rest/v1/resep?id=eq.${resepId}`,
-          this.updatedResep, // Kirim data resep yang sudah diupdate sebagai payload
+          updatedData, // Kirim data resep yang sudah diupdate sebagai payload
           {
             headers: {
               apikey: process.env.supabaseKey,
@@ -96,8 +103,10 @@ export default {
             },
           }
         )
+
         if (response.status === 200) {
           console.log('Data berhasil diupdate ke Supabase.')
+          this.$router.push('/resepSaya')
         } else {
           throw new Error('Gagal mengupdate data ke Supabase.')
         }

@@ -2,10 +2,10 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <div class="">
+        <div class="custom-card">
           <div class="image-container">
             <img
-              class="img-fluid rounded"
+              class="img-responsive hover-zoom rounded"
               src="https://source.unsplash.com/300x350/?food"
               alt=""
             />
@@ -17,10 +17,10 @@
               {{ deskripsi }}
             </p>
           </div>
-          <nuxt-link :to="`/resep/${resepId}`" class="custom-button"
-            >Go somewhere</nuxt-link
+          <nuxt-link :to="`/resep/${resepId}`" class="btn custom-button"
+            >Detail</nuxt-link
           >
-          <button @click="onDelete()">Delete</button>
+          <a class="btn custom-button" @click="onDelete()">Delete</a>
           <hr />
         </div>
       </div>
@@ -28,7 +28,6 @@
   </div>
 </template>
 <style>
-/* Menambahkan efek zoom saat hover */
 hr {
   height: 2px;
   background-color: black;
@@ -53,12 +52,16 @@ hr {
 .image-container:hover img {
   transform: scale(1.2); /* Atur skala sesuai kebutuhan */
 }
+.custom-card {
+  border: none;
+}
 .custom-button {
   color: black;
   text-decoration: none;
+  padding: 0;
 }
 .custom-button:hover {
-  color: green;
+  color: rgb(242, 189, 120);
 }
 </style>
 <script>

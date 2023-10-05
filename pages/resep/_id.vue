@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col">
         <img
-          class="card-img-top"
+          class="img-fluid rounded"
           src="https://source.unsplash.com/800x400/?food"
           alt=""
         />
@@ -16,13 +16,26 @@
           <a href=""><i class="bi bi-whatsapp"></i></a>
         </div>
         <p class="card-text">{{ deskripsi }}</p>
-        <nuxt-link :to="`/tambah/edit/${resepId}`">Edit</nuxt-link>
+        <nuxt-link class="btn custom-button" :to="`/tambah/edit/${resepId}`"
+          >Edit</nuxt-link
+        >
         <hr />
       </div>
       <p class="card-text">{{ bahan }}</p>
     </div>
   </div>
 </template>
+<style scoped>
+.custom-button {
+  font-weight: 600;
+  color: black;
+  border: solid 1px black;
+  width: 80px;
+}
+.custom-button:hover {
+  background-color: rgb(242, 189, 120);
+}
+</style>
 
 <script>
 export default {
