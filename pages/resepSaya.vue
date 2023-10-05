@@ -1,5 +1,12 @@
 <template>
   <div class="container">
+    <div class="row py-3">
+      <div class="col text-center">
+        <h1 class="">RESEP SAYA</h1>
+        <p>Kumpulan Resep Terbaik untuk Setiap Kesempatan</p>
+        <hr />
+      </div>
+    </div>
     <div class="row">
       <card-article
         v-for="(item, id) of resep"

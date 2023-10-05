@@ -5,7 +5,7 @@
         <div class="">
           <div class="image-container">
             <img
-              class="img-responsive hover-zoom rounded"
+              class="img-fluid rounded"
               src="https://source.unsplash.com/300x350/?food"
               alt=""
             />

@@ -2,11 +2,8 @@
   <div class="container">
     <div class="row py-3">
       <div class="col text-center">
-        <h1 class="">Recipes</h1>
-        <p>
-          Discover healthy, whole-food, plant-based recipes that are bursting
-          with flavour.
-        </p>
+        <h1 class="">RESEP</h1>
+        <p>Kumpulan Resep Terbaik untuk Setiap Kesempatan</p>
         <hr />
       </div>
     </div>
