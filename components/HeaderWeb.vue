@@ -22,7 +22,7 @@
               <a class="element nav-link" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="element nav-link" href="/recipes">Recipes</a>
+              <a class="element nav-link" href="/recipes">Resep</a>
             </li>
             <li class="nav-item">
               <a class="element nav-link" href="/">Blog</a>

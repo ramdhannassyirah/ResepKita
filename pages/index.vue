@@ -6,19 +6,22 @@
           <div class="col d-flex align-items-center my-3">
             <div class="col-md">
               <p class="">MEMBUAT RESEP, BERBAGI RESEP</p>
-              <h1>Mau Membagikan Resep Favoritmu ?</h1>
+              <TypingText />
+
               <p>
                 Jadilah bagian dari komunitas kami dan mulailah petualangan
                 kuliner Anda sekarang!
               </p>
-              <button type="button" class="btn btn-dark">BUAT AKUN</button>
+              <button type="button" class="btn btn-dark">
+                MARI BERGABUNG DENGAN KAMI
+              </button>
             </div>
           </div>
           <div class="col-md">
             <img
               src=" https://source.unsplash.com/800x600/?food"
               alt=""
-              class="img-fluid"
+              class="img-fluid rounded"
             />
           </div>
         </div>
@@ -69,7 +72,7 @@
         <div class="row">
           <div class="col-md">
             <img
-              class="img-fluid"
+              class="img-fluid rounded"
               src=" https://source.unsplash.com/800x600/?food"
               alt=""
             />
@@ -81,7 +84,7 @@
               sehari-hari yang sederhana hingga hidangan khusus yang
               mengesankan.
             </h1>
-            <div class="row mt-5">
+            <div class="row mt-md-5">
               <div class="col-md">
                 <p>Other lifestyle products</p>
                 <p>Book recommendations</p>
@@ -90,11 +93,11 @@
                 <p>Food & supplements</p>
                 <p>Utensils & appliances</p>
               </div>
-              <hr class="mt-5" />
-              <a class="fw-bold text-dark text-decoration-none" href="/"
-                >READ THE BLOG</a
-              >
+              <hr class="mt-md-5" />
             </div>
+            <a class="element fw-bold text-dark text-decoration-none" href="/"
+              >LEBIH BANYAK RESEP</a
+            >
           </div>
         </div>
       </div>
@@ -104,7 +107,7 @@
         <div class="row">
           <div class="text-center">
             <img
-              class="img-fluid"
+              class="img-fluid rounded"
               src="https://source.unsplash.com/800x400/?food"
               alt=""
             />
@@ -121,22 +124,54 @@
             </p>
             <hr />
           </div>
-          <a class="fw-bold text-dark text-decoration-none" href="/recipes"
-            >MORE RECIPES</a
-          >
         </div>
+        <a
+          class="element fw-bold text-dark text-decoration-none"
+          href="/recipes"
+          >TENTANG KAMI</a
+        >
       </div>
     </section>
   </div>
 </template>
-<style></style>
+<style>
+.custom-button {
+  color: black;
+  text-decoration: none;
+  padding: 0;
+  font-weight: 600;
+}
 
+.element {
+  position: relative;
+  text-decoration: none;
+  display: inline-block; /* Membuat elemen memiliki lebar sesuai teks */
+  padding-bottom: 2px; /* Sesuaikan sesuai kebutuhan */
+}
+
+.element::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 100%; /* Mulai dari luar elemen */
+  height: 3px; /* Atur tinggi garis bawah sesuai keinginan */
+  background-color: rgb(242, 189, 120); /* Warna garis bawah */
+  transition: right 0.3s ease; /* Efek transisi bergerak */
+}
+
+.element:hover::before {
+  right: 0; /* Berhenti di ujung kanan elemen */
+}
+</style>
 <script>
+import TypingText from '~/components/TypingText.vue'
 export default {
   name: 'IndexPage',
   data() {
     return {
-      resepId: null, // Ganti dengan tipe data null atau default ID awal
+      resepId: null,
+      TypingText,
     }
   },
   mounted() {
@@ -151,11 +186,9 @@ export default {
           },
         })
 
-        // Mengambil satu ID dari respons
         const firstId = response?.data[0]?.id
 
-        // Mengganti properti resepId dengan ID yang baru
-        this.resepId = firstId || null // Jika tidak ada ID yang tersedia, set null atau nilai default
+        this.resepId = firstId || null
       } catch (error) {
         console.error('Terjadi kesalahan:', error)
       }
