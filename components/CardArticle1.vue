@@ -17,10 +17,10 @@
               {{ deskripsi }}
             </p>
           </div>
-          <nuxt-link :to="`/resep/${resepId}`" class="btn custom-button"
+          <nuxt-link :to="`/resep/${resepId}`" class="element btn custom-button"
             >Detail</nuxt-link
           >
-          <a class="btn custom-button" @click="onDelete()">Delete</a>
+          <a class="element btn custom-button" @click="onDelete()">Delete</a>
           <hr />
         </div>
       </div>
@@ -28,6 +28,27 @@
   </div>
 </template>
 <style>
+.element {
+  position: relative;
+  text-decoration: none;
+  display: inline-block; /* Membuat elemen memiliki lebar sesuai teks */
+  padding-bottom: 2px; /* Sesuaikan sesuai kebutuhan */
+}
+
+.element::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 100%; /* Mulai dari luar elemen */
+  height: 3px; /* Atur tinggi garis bawah sesuai keinginan */
+  background-color: rgb(242, 189, 120); /* Warna garis bawah */
+  transition: right 0.3s ease; /* Efek transisi bergerak */
+}
+
+.element:hover::before {
+  right: 0; /* Berhenti di ujung kanan elemen */
+}
 hr {
   height: 2px;
   background-color: black;
