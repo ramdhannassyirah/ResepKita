@@ -1,36 +1,46 @@
 <template>
   <div class="container">
-    <form @submit="addResep">
-      <div class="form-group">
-        <label for="nama">Nama Resep:</label>
-        <input
-          type="text"
-          id="nama"
-          v-model="newResep.nama"
-          class="form-control"
-          required
-        />
+    <div class="row">
+      <div class="col text-center">
+        <h1 class="">RESEP</h1>
+        <p>Kumpulan Resep Terbaik untuk Setiap Kesempatan</p>
+        <hr />
       </div>
-      <div class="form-group">
-        <label for="deskripsi">Deskripsi:</label>
-        <textarea
-          id="deskripsi"
-          v-model="newResep.deskripsi"
-          class="form-control"
-          required
-        ></textarea>
-      </div>
-      <div class="form-group">
-        <label for="bahan">Bahan-bahan:</label>
-        <textarea
-          id="bahan"
-          v-model="newResep.bahan"
-          class="form-control"
-          required
-        ></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+
+      <form @submit="addResep">
+        <div class="row">
+          <div class="col">
+            <label for="nama">Nama Resep:</label>
+            <input
+              type="text"
+              id="nama"
+              v-model="newResep.nama"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="col">
+            <label for="deskripsi">Deskripsi:</label>
+            <input
+              id="deskripsi"
+              v-model="newResep.deskripsi"
+              class="form-control"
+              required
+            ></input>
+          </div>
+        </div>
+        <div class="">
+          <label for="bahan">Bahan-bahan:</label>
+          <textarea
+            id="bahan"
+            v-model="newResep.bahan"
+            class="form-control"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark mt-3">Submit</button>
+      </form>
+    </div>
   </div>
 </template>
 

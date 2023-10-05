@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Tambah Resep Baru</h1>
     <ResepForm />
   </div>
 </template>
