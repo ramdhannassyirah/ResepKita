@@ -29,11 +29,13 @@ export default {
     return {
       isCreate: false,
       resep: [],
+      isLoggedIn: true,
     }
   },
   mounted() {
     this.getResep()
   },
+
   methods: {
     async getResep() {
       const response = await this.$axios.get('/rest/v1/resep', {

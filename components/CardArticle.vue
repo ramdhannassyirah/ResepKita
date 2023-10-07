@@ -6,7 +6,7 @@
           <div class="card custom-card">
             <div class="image-container">
               <img
-                class="img-responsive hover-zoom rounded"
+                class="rounded"
                 src="https://source.unsplash.com/300x350/?food"
                 alt=""
               />

@@ -8,7 +8,9 @@
       </div>
 
       <form @submit="addResep">
+        <!-- Input Gambar -->
         <div class="row">
+          <!-- Input Nama Resep -->
           <div class="col">
             <label for="nama">Nama Resep:</label>
             <input
@@ -19,9 +21,12 @@
               required
             />
           </div>
+
+          <!-- Input Deskripsi -->
           <div class="col">
             <label for="deskripsi">Deskripsi:</label>
             <input
+              type="text"
               id="deskripsi"
               v-model="newResep.deskripsi"
               class="form-control"
@@ -29,7 +34,9 @@
             />
           </div>
         </div>
-        <div class="">
+
+        <!-- Input Bahan-bahan -->
+        <div class="form-group">
           <label for="bahan">Bahan-bahan:</label>
           <textarea
             id="bahan"
@@ -38,6 +45,8 @@
             required
           ></textarea>
         </div>
+
+        <!-- Tombol Submit -->
         <button type="submit" class="btn btn-dark mt-3">Submit</button>
       </form>
     </div>

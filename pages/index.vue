@@ -12,9 +12,9 @@
                 Jadilah bagian dari komunitas kami dan mulailah petualangan
                 kuliner Anda sekarang!
               </p>
-              <button type="button" class="btn btn-dark">
+              <a class="btn btn-dark" href="/form/register">
                 MARI BERGABUNG DENGAN KAMI
-              </button>
+              </a>
             </div>
           </div>
           <div class="col-md">
@@ -95,7 +95,9 @@
               </div>
               <hr class="mt-md-5" />
             </div>
-            <a class="element fw-bold text-dark text-decoration-none" href="/"
+            <a
+              class="element fw-bold text-dark text-decoration-none"
+              href="/image"
               >LEBIH BANYAK RESEP</a
             >
           </div>
@@ -172,8 +174,10 @@ export default {
     return {
       resepId: null,
       TypingText,
+      isLoggedIn: true,
     }
   },
+
   mounted() {
     this.getResep()
   },
