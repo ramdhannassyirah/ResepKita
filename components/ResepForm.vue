@@ -2,8 +2,8 @@
   <div class="container">
     <div class="row">
       <div class="col text-center">
-        <h1 class="">RESEP</h1>
-        <p>Kumpulan Resep Terbaik untuk Setiap Kesempatan</p>
+        <h1 class="">TAMBAH RESEP</h1>
+        <p>Berkontribusi dengan resepmu</p>
         <hr />
       </div>
 
