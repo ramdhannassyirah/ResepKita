@@ -19,6 +19,7 @@
       <br />
       <button type="submit" class="btn btn-dark my-2">Login</button>
     </form>
+    <p>belum memiliki akun?<a href="register">Daftar</a></p>
   </div>
 </template>
 
