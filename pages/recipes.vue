@@ -27,7 +27,6 @@ export default {
   components: { CardArticle },
   data() {
     return {
-      isCreate: false,
       resep: [],
       isLoggedIn: true,
     }

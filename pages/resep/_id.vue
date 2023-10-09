@@ -16,7 +16,10 @@
           <a href=""><i class="bi bi-whatsapp"></i></a>
         </div>
         <p class="card-text">{{ deskripsi }}</p>
-        <nuxt-link class="btn custom-button" :to="`/tambah/edit/${resepId}`"
+        <nuxt-link
+          class="btn custom-button"
+          :to="`/tambah/edit/${resepId}`"
+          v-show="isLoggedIn"
           >Edit</nuxt-link
         >
         <hr />
@@ -38,6 +41,7 @@
 </style>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
@@ -47,7 +51,9 @@ export default {
       resepId: '',
     }
   },
-
+  computed: {
+    ...mapState(['isLoggedIn']),
+  },
   async created() {
     const params = this.$route.params
     await this.getDetailData(params?.id)

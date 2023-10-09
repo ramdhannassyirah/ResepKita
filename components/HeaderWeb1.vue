@@ -33,19 +33,18 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Nama Pengguna
+                nama
               </a>
               <ul class="dropdown-menu">
-                <li>
-                  <a class="element dropdown-item" href="/resepSaya"
-                    >Resep Saya</a
-                  >
-                </li>
-                <li>
-                  <a class="element dropdown-item" href="/tambah/add"
-                    >Tambah resep</a
-                  >
-                </li>
+                <a class="element dropdown-item" href="/resepSaya"
+                  >Resep Saya</a
+                >
+                <a class="element dropdown-item" href="/tambah/add"
+                  >Tambah resep</a
+                >
+                <button class="element dropdown-item" @click="logout">
+                  Logout
+                </button>
               </ul>
             </li>
           </ul>
@@ -54,3 +53,21 @@
     </nav>
   </div>
 </template>
+<script>
+import { mapMutations, mapGetters } from 'vuex'
+export default {
+  computed: {
+    ...mapGetters(['isLoggedIn']), // Mengambil status login dari Vuex
+  },
+  methods: {
+    ...mapMutations(['SET_LOGGED_IN']),
+    logout() {
+      localStorage.removeItem('access_token')
+
+      this.SET_LOGGED_IN(false)
+
+      this.$router.push('/')
+    },
+  },
+}
+</script>

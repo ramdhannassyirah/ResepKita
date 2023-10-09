@@ -24,6 +24,7 @@ import CardArticle from '~/components/CardArticle1.vue'
 
 export default {
   components: { CardArticle },
+
   data() {
     return {
       resep: [],

@@ -1,4 +1,3 @@
-// store/index.js
 export const state = () => ({
   isLoggedIn: false, // Menyimpan status login
 })

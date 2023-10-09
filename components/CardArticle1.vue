@@ -115,8 +115,6 @@ export default {
         )
         if (response.status === 204) {
           console.log('Resep berhasil dihapus.')
-          // Arahkan ulang halaman setelah penghapusan berhasil
-          this.$router.go() // Reload halaman saat ini
         } else {
           console.error('Gagal menghapus resep.')
         }
