@@ -106,7 +106,6 @@ export default {
 
         if (response.status === 200) {
           console.log('Data berhasil diupdate ke Supabase.')
-          this.$router.push('/resepSaya')
         } else {
           throw new Error('Gagal mengupdate data ke Supabase.')
         }
