@@ -40,7 +40,7 @@
             </p>
           </div>
           <div class="col-md-3">
-            <h1 class="fw-bold">15</h1>
+            <h1 class="fw-bold">{{ resepId }}</h1>
             <p>MAKANAN</p>
             <hr />
             <p>
@@ -50,7 +50,7 @@
             </p>
           </div>
           <div class="col-md-3">
-            <h1 class="fw-bold">5</h1>
+            <h1 class="fw-bold">{{ resepId }}</h1>
             <p>MINUMAN</p>
             <hr />
             <p>

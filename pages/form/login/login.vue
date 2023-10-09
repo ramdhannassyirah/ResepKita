@@ -1,25 +1,29 @@
 <!-- pages/Login.vue -->
 <template>
   <div class="container text-center">
-    <h1>Login</h1>
-    <form @submit.prevent="login">
-      <input
-        v-model="email"
-        type="email"
-        placeholder="Email"
-        class="my-2 rounded px-2"
-      />
-      <br />
-      <input
-        v-model="password"
-        type="password"
-        placeholder="Password"
-        class="my-2 rounded rounded px-2"
-      />
-      <br />
-      <button type="submit" class="btn btn-dark my-2">Login</button>
-    </form>
-    <p>belum memiliki akun?<a href="register">Daftar</a></p>
+    <div class="row align-items-center">
+      <div class="col">
+        <h1>Login</h1>
+        <form @submit.prevent="login">
+          <input
+            v-model="email"
+            type="email"
+            placeholder="Email"
+            class="my-2 rounded px-2"
+          />
+          <br />
+          <input
+            v-model="password"
+            type="password"
+            placeholder="Password"
+            class="my-2 rounded rounded px-2"
+          />
+          <br />
+          <button type="submit" class="btn btn-dark my-2">Login</button>
+        </form>
+        <p>belum memiliki akun?<a href="../register">Daftar</a></p>
+      </div>
+    </div>
   </div>
 </template>
 

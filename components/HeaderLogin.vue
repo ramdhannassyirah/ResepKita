@@ -23,7 +23,7 @@
             <nuxt-link class="element nav-link" to="/form/register"
               >Daftar</nuxt-link
             >
-            <nuxt-link class="element nav-link" to="/form/login"
+            <nuxt-link class="element nav-link" to="/form/login/login"
               >Masuk</nuxt-link
             >
           </div>

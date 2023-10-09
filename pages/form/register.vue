@@ -23,7 +23,7 @@
           <br />
           <button type="submit" class="btn btn-dark my-2">Sign Up</button>
         </form>
-        <p>sudah memiliki akun?<a href="login">login</a></p>
+        <p>sudah memiliki akun?<a href="/form/login/login">login</a></p>
       </div>
     </div>
     <!-- Tampilkan alert jika signupSuccess adalah false -->
