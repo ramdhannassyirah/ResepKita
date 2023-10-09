@@ -22,7 +22,6 @@
             />
           </div>
 
-          <!-- Input Deskripsi -->
           <div class="col">
             <label for="deskripsi">Deskripsi:</label>
             <input
@@ -35,7 +34,6 @@
           </div>
         </div>
 
-        <!-- Input Bahan-bahan -->
         <div class="form-group">
           <label for="bahan">Bahan-bahan:</label>
           <textarea

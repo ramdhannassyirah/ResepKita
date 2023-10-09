@@ -18,14 +18,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="navbar-nav ms-auto">
-            <nuxt-link class="element nav-link" to="/">Home</nuxt-link>
-            <nuxt-link class="element nav-link" to="/recipes">Resep</nuxt-link>
-            <nuxt-link class="element nav-link" to="/form/register"
-              >Daftar</nuxt-link
-            >
-            <nuxt-link class="element nav-link" to="/form/login/login"
-              >Masuk</nuxt-link
-            >
+            <a class="element nav-link" href="/">Home</a>
+            <a class="element nav-link" href="/recipes">Resep</a>
+            <a class="element nav-link" href="/form/register">Daftar</a>
+            <a class="element nav-link" href="/form/login/login">Masuk</a>
           </div>
         </div>
       </div>
