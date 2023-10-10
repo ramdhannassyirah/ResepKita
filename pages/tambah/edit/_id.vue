@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <form @submit="updateResep">
+    <form @submit.prevent="updateResep">
       <div class="form-group">
         <label for="nama">Nama Resep:</label>
         <input
@@ -29,7 +29,8 @@
           required
         ></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Update</button>
+      <button type="submit" class="btn btn-dark mt-3">Update</button>
+      <a href="/resepSaya" class="btn btn-dark mt-3">Kembali</a>
     </form>
   </div>
 </template>

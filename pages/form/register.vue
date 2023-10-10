@@ -27,9 +27,6 @@
       </div>
     </div>
     <!-- Tampilkan alert jika signupSuccess adalah false -->
-    <div v-if="!signupSuccess" class="alert alert-dark">
-      Pendaftaran berhasil! Verifikasi Email terlebih dahulu
-    </div>
   </div>
 </template>
 

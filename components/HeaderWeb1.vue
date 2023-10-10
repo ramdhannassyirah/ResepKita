@@ -33,18 +33,19 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                nama
+                {{ nama }}
               </a>
               <ul class="dropdown-menu">
-                <a class="element dropdown-item" href="/resepSaya"
-                  >Resep Saya</a
-                >
-                <a class="element dropdown-item" href="/tambah/add"
-                  >Tambah resep</a
-                >
-                <button class="element dropdown-item" @click="logout">
-                  Logout
-                </button>
+                <li>
+                  <a class="element dropdown-item" href="/resepSaya"
+                    >Resep Saya</a
+                  >
+                </li>
+                <li>
+                  <a class="element dropdown-item" href="/tambah/add"
+                    >Tambah resep</a
+                  >
+                </li>
               </ul>
             </li>
           </ul>
@@ -54,20 +55,46 @@
   </div>
 </template>
 <script>
-import { mapMutations, mapGetters } from 'vuex'
 export default {
-  computed: {
-    ...mapGetters(['isLoggedIn']), // Mengambil status login dari Vuex
+  data() {
+    return {
+      nama: [],
+      // Ganti dengan nama pengguna yang sesuai
+    }
   },
-  methods: {
-    ...mapMutations(['SET_LOGGED_IN']),
-    logout() {
-      localStorage.removeItem('access_token')
+  async created() {
+    // Gantilah supabaseUrl dan supabaseKey sesuai dengan konfigurasi Supabase Anda
 
-      this.SET_LOGGED_IN(false)
+    const supabaseAuthUrl = `${process.env.supabaseApi}/auth/v1/token?grant_type=anonymous`
 
-      this.$router.push('/')
-    },
+    try {
+      // Get the session token
+      const {
+        data: { accessToken },
+      } = await this.$axios.post(
+        supabaseAuthUrl,
+
+        {
+          headers: {
+            apikey: process.env.supabaseKey,
+          },
+        }
+      )
+
+      // Make an authenticated request
+      const { data } = await this.$axios.get(
+        `${process.env.supabaseApi}/rest/v1/auth/users`,
+        {
+          headers: {
+            Authorization: `'Bearer ${accessToken}'`,
+          },
+        }
+      )
+
+      this.nama = data.nama // Atur nama pengguna berdasarkan data yang diterima
+    } catch (error) {
+      console.error('Error:', error.message)
+    }
   },
 }
 </script>

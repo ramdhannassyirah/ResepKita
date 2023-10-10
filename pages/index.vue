@@ -97,7 +97,7 @@
             </div>
             <a
               class="element fw-bold text-dark text-decoration-none"
-              href="/image"
+              href="/recipes"
               >LEBIH BANYAK RESEP</a
             >
           </div>
