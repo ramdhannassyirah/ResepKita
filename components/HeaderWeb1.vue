@@ -33,7 +33,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                {{ nama }}
+                nama pengguna
               </a>
               <ul class="dropdown-menu">
                 <li>
@@ -54,47 +54,3 @@
     </nav>
   </div>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      nama: [],
-      // Ganti dengan nama pengguna yang sesuai
-    }
-  },
-  async created() {
-    // Gantilah supabaseUrl dan supabaseKey sesuai dengan konfigurasi Supabase Anda
-
-    const supabaseAuthUrl = `${process.env.supabaseApi}/auth/v1/token?grant_type=anonymous`
-
-    try {
-      // Get the session token
-      const {
-        data: { accessToken },
-      } = await this.$axios.post(
-        supabaseAuthUrl,
-
-        {
-          headers: {
-            apikey: process.env.supabaseKey,
-          },
-        }
-      )
-
-      // Make an authenticated request
-      const { data } = await this.$axios.get(
-        `${process.env.supabaseApi}/rest/v1/auth/users`,
-        {
-          headers: {
-            Authorization: `'Bearer ${accessToken}'`,
-          },
-        }
-      )
-
-      this.nama = data.nama // Atur nama pengguna berdasarkan data yang diterima
-    } catch (error) {
-      console.error('Error:', error.message)
-    }
-  },
-}
-</script>
