@@ -46,6 +46,11 @@
                     >Tambah resep</a
                   >
                 </li>
+                <li>
+                  <button class="element dropdown-item" @click="logout">
+                    logout
+                  </button>
+                </li>
               </ul>
             </li>
           </ul>
@@ -54,3 +59,23 @@
     </nav>
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    logout() {
+      try {
+        // Hapus token dari localStorage
+        localStorage.removeItem('access_token')
+
+        // Set isLoggedIn ke false di store
+        this.isLoggedIn(false)
+
+        // Redirect ke halaman login atau halaman beranda
+        this.$router.push('/login') // Gantilah dengan halaman login yang sesuai
+      } catch (error) {
+        console.error('Error during logout:', error)
+      }
+    },
+  },
+}
+</script>

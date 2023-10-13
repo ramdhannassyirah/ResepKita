@@ -3,7 +3,11 @@ export const state = () => ({
 })
 
 export const mutations = {
-  SET_LOGGED_IN(state, isLoggedIn) {
-    state.isLoggedIn = isLoggedIn
+  SET_LOGGED_IN(state) {
+    // Cek apakah token ada di localStorage
+    const token = localStorage.getItem('access_token')
+
+    // Jika token ada, set isLoggedIn ke true
+    state.isLoggedIn = token
   },
 }
